@@ -1,4 +1,4 @@
-# Copyright (C) 2019 AngeloGioacchino Del Regno <kholk11@gmail.com>
+# Copyright (C) 2020 martin Dünkelmann <nc-duenkekl3@netcologne.de>
 #
 # ROM specific customization for Sony Open Devices
 # PlatformConfig/BoardConfig overrides
@@ -15,22 +15,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-CUST_PATH := device/sony/customization
-
-# Compilers setup for Q
-TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_CLANG_VERSION := r353983c
-
-# A/B Incremental update 
-TARGET_INCREMENTAL_BLOCK_BASED := true
-
-# Aosp SF
-TARGET_USES_AOSP_SURFACEFLINGER := true
-
-# Kernel inline building
-BOARD_KERNEL_SEPARATED_DTBO := true
-TARGET_COMPILE_WITH_MSM_KERNEL := true
-TARGET_KERNEL_SOURCE := kernel/sony/msm-4.14/kernel
-TARGET_NEEDS_DTBOIMAGE := false
-
-include $(CUST_PATH)/lineageOS/Customization.mk
+# AVB prevents modifications like GAPPS or the dualsim patcher from working.
+# It detects these "modified" files and prevent them from being loaded.
+# Which results in a broken device, after an OTA reactivates AVB.
+# AVB is anyway not useful, since we can't relock our device and everybody with direct hardware access can modify it.
+# If we set this variable in the customization repo, it won't get used, since it gets already set in the SODP device trees.
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
