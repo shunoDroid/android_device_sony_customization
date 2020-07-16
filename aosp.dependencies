@@ -7,7 +7,7 @@
   },
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/kernel",
+    "repository":   "kholk/kernel",
     "target_path":  "kernel/sony/msm-4.14/kernel",
     "branch":     "aosp/LA.UM.7.1.r1"
   },
@@ -55,7 +55,7 @@
   },
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/device-sony-common",
+    "repository":   "kholk/device-sony-common",
     "target_path":  "device/sony/common",
     "branch":     "q-mr1"
   },
@@ -154,19 +154,19 @@
 
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/device-sony-kumano",
+    "repository":   "kholk/device-sony-kumano",
     "target_path":  "device/sony/kumano",
     "branch":     "q-mr1"
   },
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/device-sony-griffin",
+    "repository":   "kholk/device-sony-griffin",
     "target_path":  "device/sony/griffin",
     "branch":     "q-mr1"
   },
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/device-sony-bahamut",
+    "repository":   "kholk/device-sony-bahamut",
     "target_path":  "device/sony/bahamut",
     "branch":     "q-mr1"
   },
