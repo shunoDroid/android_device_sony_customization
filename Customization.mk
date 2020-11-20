@@ -33,4 +33,4 @@ TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/sony/msm-4.14/kernel
 TARGET_NEEDS_DTBOIMAGE := false
 
-include $(CUST_PATH)/lineageOS/Customization.mk
+include $(CUST_PATH)/aicp/Customization.mk

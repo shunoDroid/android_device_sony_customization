@@ -23,46 +23,46 @@ CUST_PATH := device/sony/customization
 
 # DEVICE_PACKAGE_OVERLAYS += $(CUST_PATH)/overlay
 
-ifneq ($(filter lineage_kugo lineage_blanc lineage_lilac, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_kugo aicp_blanc aicp_lilac, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 endif
 
-ifneq ($(filter lineage_suzu lineage_dora lineage_kagura lineage_keyaki lineage_poplar lineage_pioneer lineage_voyager lineage_discovery lineage_kirin, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_suzu aicp_dora aicp_kagura aicp_keyaki aicp_poplar aicp_pioneer aicp_voyager aicp_discovery aicp_kirin, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter lineage_akari lineage_apollo, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_akari aicp_apollo, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2160
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter lineage_akatsuki, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_akatsuki, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2880
 TARGET_SCREEN_WIDTH := 1440
 endif
 
-ifneq ($(filter lineage_mermaid lineage_bahamut, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_mermaid aicp_bahamut, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 2520
 TARGET_SCREEN_WIDTH := 1080
 endif
 
-ifneq ($(filter lineage_maple, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_maple, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 3840
 TARGET_SCREEN_WIDTH := 2160
 endif
 
-ifneq ($(filter lineage_griffin, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_griffin, $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 3840
 TARGET_SCREEN_WIDTH := 1644
 endif
 
-ifneq ($(filter lineage_maple, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_maple, $(TARGET_PRODUCT)),)
 # Faking to 1080 to get the right bootanimation res on:
 # Maple(3840x2160)
 TARGET_BOOT_ANIMATION_RES := 1080
-else ifneq ($(filter lineage_griffin, $(TARGET_PRODUCT)),)
+else ifneq ($(filter aicp_griffin, $(TARGET_PRODUCT)),)
 # Faking to 1440 to get the best bootanimation res on:
 # Griffin (3840x1644)
 TARGET_BOOT_ANIMATION_RES := 1440
@@ -189,4 +189,4 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 -include $(CUST_PATH)/pe_cust.mk
 
-include $(CUST_PATH)/lineageOS/customization.mk
+include $(CUST_PATH)/aicp/customization.mk
