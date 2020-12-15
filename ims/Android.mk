@@ -130,7 +130,7 @@ LOCAL_PRIVILEGED_MODULE := true
 include $(BUILD_PREBUILT)
 
 
-# Our enhancements
+# Our enhancements - Apps
 include $(CLEAR_VARS)
 LOCAL_MODULE := CneApp
 LOCAL_SRC_FILES := ims/CneApp.apk

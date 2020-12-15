@@ -21,16 +21,16 @@ CUST_PATH := device/sony/customization
 TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_CLANG_VERSION := r353983c
 
-# A/B Incremental update 
-TARGET_INCREMENTAL_BLOCK_BASED := true
-
-# Aosp SF
-TARGET_USES_AOSP_SURFACEFLINGER := true
-
 # Kernel inline building
-BOARD_KERNEL_SEPARATED_DTBO := true
 TARGET_COMPILE_WITH_MSM_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/sony/msm-4.14/kernel
 TARGET_NEEDS_DTBOIMAGE := false
 
-include $(CUST_PATH)/aicp/Customization.mk
+ifneq ($(filter nile ganges yoshino, $(SOMC_PLATFORM)),)
+BOARD_KERNEL_SEPARATED_DTBO := false
+else
+BOARD_KERNEL_SEPARATED_DTBO := true
+endif
+
+TARGET_KERNEL_ADDITIONAL_FLAGS := \
+	DTC_EXT=/usr/bin/dtc

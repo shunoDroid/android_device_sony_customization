@@ -184,13 +184,25 @@
   },
   {
     "remote":       "github",
+    "repository":   "sonyxperiadev/device-sony-seine",
+    "target_path":  "device/sony/seine",
+    "branch":     "master"
+  },
+  {
+    "remote":       "github",
+    "repository":   "sonyxperiadev/device-sony-pdx201",
+    "target_path":  "device/sony/pdx201",
+    "branch":     "master"
+  },
+  {
+    "remote":       "github",
     "repository":   "sonyxperiadev/vendor-nxp",
     "target_path":  "vendor/nxp",
     "branch":     "q-mr1"
   },
   {
     "remote":       "github",
-    "repository":   "NXPNFCProject/NXPNFCC_FW",
+    "repository":   "NXP/nfc-NXPNFCC_FW",
     "target_path":  "vendor/nxp/NXPNFCC_FW",
     "branch":     "master"
   },
@@ -254,7 +266,13 @@
     "remote":       "github",
     "repository":   "sonyxperiadev/packages_apps_ExtendedSettings",
     "target_path":  "packages/apps/ExtendedSettings",
-    "branch":     "q-mr1"
+    "branch":     "master"
+  },
+  {
+    "remote":       "github",
+    "repository":   "sonyxperiadev/SonyOpenTelephony",
+    "target_path":  "packages/apps/SonyOpenTelephony",
+    "branch":       "master"
   },
   {
     "remote":       "github",
@@ -276,7 +294,7 @@
   },
   {
     "remote":       "github",
-    "repository":   "sonyxperiadev/hardware-qcom-media",
+    "repository":   "sonyxperiadev/hardware-qcom-media-sm8150",
     "target_path":  "vendor/qcom/opensource/media/sm8150",
     "branch":     "aosp/LA.UM.8.1.r1"
   },
@@ -324,7 +342,7 @@
   },
   {
     "repository":   "device_sony_ipacfg-mgr",
-    "target_path":  "hardware/qcom/data/ipacfg-mgr/sdm845",
+    "target_path":  "vendor/qcom/opensource/data/ipacfg-mgr/sdm845",
     "branch":     "ten"
   },
   {
@@ -349,18 +367,12 @@
     "remote":       "github",
     "repository":   "sonyxperiadev/vendor-qcom-opensource-audio-hal-primary-hal",
     "target_path":  "vendor/qcom/opensource/audio-hal/primary-hal",
-    "branch":     "q-mr1"
+    "branch":     "r-mr1"
   },
   {
     "remote":       "github",
     "repository":   "afstamming/proprietary_vendor_widevine",
     "target_path":  "vendor/widevine",
-    "branch":     "af-lineage-17.0"
-  },
-  {
-    "repository": "packages_apps_PixelLiveWallpaper",
-    "target_path": "packages/apps/PixelLiveWallpaper",
-    "branch": "ten",
-    "remote": "pixel-gitlab"
+    "branch":     "af-lineage-18.0"
   }
 ]

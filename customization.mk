@@ -28,7 +28,7 @@ TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 endif
 
-ifneq ($(filter aicp_suzu aicp_dora aicp_kagura aicp_keyaki aicp_poplar aicp_pioneer aicp_voyager aicp_discovery aicp_kirin, $(TARGET_PRODUCT)),)
+ifneq ($(filter aicp_suzu aicp_dora aicp_kagura aicp_keyaki aicp_poplar aicp_pioneer aicp_voyager aicp_discovery aicp_kirin, aicp_xqau $(TARGET_PRODUCT)),)
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 endif
@@ -142,8 +142,7 @@ PRODUCT_COPY_FILES += \
     $(CUST_PATH)/extras/HotwordEnrollmentXGoogleHEXAGON/privapp-permissions-xGoogleHEXAGON.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-xGoogleHEXAGON.xml \
     $(CUST_PATH)/extras/HotwordEnrollmentOKGoogleHEXAGON/privapp-permissions-OkGoogleHEXAGON.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-OkGoogleHEXAGON.xml
 
-# We are re-signing the IMS app, so we are installing it from the build system:
-# copy emptyfile to ims/lib/arm64 purely to create the folder
+# Create folder to bindmount libs for the IMS VideoTelephony
 PRODUCT_COPY_FILES += \
     $(CUST_PATH)/ims/emptyfile:$(TARGET_COPY_OUT_PRODUCT)/priv-app/ims/lib/arm64/bind_mount_lib64_here
 
@@ -188,5 +187,4 @@ $(call inherit-product-if-exists, vendor/widevine/widevine.mk)
 DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 -include $(CUST_PATH)/pe_cust.mk
-
-include $(CUST_PATH)/aicp/customization.mk
+-include vendor/aicp/config/common_full_phone.mk
