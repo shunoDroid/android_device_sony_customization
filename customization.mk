@@ -82,6 +82,15 @@ TARGET_RECOVERY_DEVICE_MODULES := tune2fs strace
 # Google Wifi Hal
 TARGET_INCLUDE_WIFI_EXT := false
 
+# Vibrator
+ifeq ($(TARGET_VIBRATOR_V1_2),true)
+# QTI Haptics Vibrator
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.vibrator.service \
+    libqtivibratoreffect
+endif
+
+
 # cust packages
 PRODUCT_PACKAGES += \
     HotwordEnrollmentOKGoogleHEXAGON \
@@ -174,7 +183,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.rat_on=combine \
     persist.vendor.radio.voice_on_lte=1
 
-TARGET_USES_AOSP_APNS_CONF := true
+USE_SODP_APNS := false
 
 # Wallpapers
 PRODUCT_PACKAGES += \
